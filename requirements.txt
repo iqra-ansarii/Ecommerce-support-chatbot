@@ -4,3 +4,4 @@ numpy
 pandas
 onnxruntime
 tokenizers
+uvicorn
