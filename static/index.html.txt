@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Customer Support Chatbot</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="top-header">
+            <div class="brand">
+                <div class="brand-icon">🛒</div>
+
+                <div>
+                    <h1>E-commerce Customer Support Chatbot</h1>
+                    <p>Smart support powered by semantic search</p>
+                </div>
+            </div>
+
+            <div class="online-status">
+                <span class="status-dot"></span>
+                Online
+            </div>
+        </header>
+
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+
+                <div class="bot-card">
+
+                    <div class="bot-avatar">
+                        🤖
+                    </div>
+
+                    <h2>How can I help?</h2>
+
+                    <p>
+                        Ask me anything about your orders,
+                        payments, returns, delivery, or products.
+                    </p>
+
+                </div>
+
+
+                <div class="help-section">
+
+                    <h3>Quick help</h3>
+
+                    <button
+                        class="quick-button"
+                        data-question="Where is my order?"
+                    >
+                        📦 Track my order
+                    </button>
+
+                    <button
+                        class="quick-button"
+                        data-question="I want to return an item"
+                    >
+                        ↩️ Return my item
+                    </button>
+
+                    <button
+                        class="quick-button"
+                        data-question="Where is my refund?"
+                    >
+                        💰 Refund status
+                    </button>
+
+                    <button
+                        class="quick-button"
+                        data-question="How long will delivery take?"
+                    >
+                        🚚 Shipping information
+                    </button>
+
+                    <button
+                        class="quick-button"
+                        data-question="How can I download my invoice?"
+                    >
+                        🧾 Download invoice
+                    </button>
+
+                </div>
+
+            </aside>
+
+
+            <!-- Chat Area -->
+            <section class="chat-panel">
+
+                <div class="chat-header">
+
+                    <div>
+                        <h2>Customer Support</h2>
+                        <p>We're here to help you</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Messages -->
+                <div
+                    class="chat-messages"
+                    id="chatMessages"
+                >
+
+                    <div class="message bot-message">
+
+                        <div class="message-avatar">
+                            🤖
+                        </div>
+
+                        <div class="message-content">
+
+                            <div class="message-name">
+                                Support Bot
+                            </div>
+
+                            <div class="message-bubble">
+                                Hi! 👋 Welcome to customer support.
+                                How can I help you today?
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quick Questions -->
+                <div class="quick-actions">
+
+                    <button
+                        class="quick-chip"
+                        data-question="Where is my order?"
+                    >
+                        Where is my order?
+                    </button>
+
+                    <button
+                        class="quick-chip"
+                        data-question="How can I download my invoice?"
+                    >
+                        Download invoice
+                    </button>
+
+                    <button
+                        class="quick-chip"
+                        data-question="I want to return an item"
+                    >
+                        Return an item
+                    </button>
+
+                    <button
+                        class="quick-chip"
+                        data-question="Where is my refund?"
+                    >
+                        Refund status
+                    </button>
+
+                </div>
+
+
+                <!-- Input Area -->
+                <div class="chat-input-area">
+
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Type your question here..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        id="sendButton"
+                        class="send-button"
+                    >
+                        Send
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
