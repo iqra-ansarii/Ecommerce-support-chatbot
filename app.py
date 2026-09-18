@@ -5,10 +5,8 @@ import pandas as pd
 import onnxruntime as ort
 from tokenizers import Tokenizer
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -214,23 +212,11 @@ def chatbot(
 app = FastAPI(
     title="E-commerce Customer Support Chatbot"
 )
-app.mount(
-    "/static",
-    StaticFiles(
-        directory=os.path.join(BASE_DIR, "static")
-    ),
-    name="static"
-)
+
 
 class ChatRequest(BaseModel):
     message: str
 
-
-@app.get("/")
-def root():
-    return FileResponse(
-        os.path.join(BASE_DIR, "static", "index.html")
-    )
 
 @app.get("/health")
 def health():
@@ -244,3 +230,13 @@ def chat(request: ChatRequest):
     return chatbot(
         request.message
     )
+
+
+app.mount(
+    "/",
+    StaticFiles(
+        directory=os.path.join(BASE_DIR, "static"),
+        html=True
+    ),
+    name="frontend"
+)
